@@ -16,6 +16,7 @@ var home = new Vue({
         library: null,
         gallery_images: null,
         partner_images: null,
+        projects: null,
         featured_projects: null,
         serverPath: 'http://cms.jyif.org/',
         about_pages: {
@@ -31,15 +32,16 @@ var home = new Vue({
         },
         projectsPage: {
             activeList: "youthEmpowerment",
-            youthEmpowerment: null,
-            youthParticipation: null,
-            capacity: null,
-            socialDevelopment: null,
+            projectsList: null,
             detailedNews: null,
         },
         library_resources: {
             activeList: 'library',
             libraryList: null,
+        },
+        careersPage: {
+            activeList: 'careers',
+            careersList: null,
         },
         sub: {
             activeList: null,
@@ -57,21 +59,36 @@ var home = new Vue({
             messageSent: false,
         },
         registerPage: {
-            first_name: null,
-            last_name: null,
-            date_of_birth: null,
-            place_of_birth: null,
-            nationality: null,
-            mobile: null,
-            email: null,
-            about_you: null,
-            about_project: null,
-            about_validity: null,
-            has_team: null,
-            count_team_members: null,
-            gender: null,
-            home_address: null,
-            regSuccess: false,
+            activeList: 'individual',
+            individual: {
+                first_name: null,
+                last_name: null,
+                date_of_birth: null,
+                place_of_birth: null,
+                nationality: null,
+                mobile: null,
+                email: null,
+                about_you: null,
+                about_project: null,
+                about_validity: null,
+                has_team: null,
+                count_team_members: null,
+                gender: null,
+                home_address: null,
+                indSuccess: false,
+            },
+            organization: {
+                business_owner_name: null,
+                country: null,
+                address: null,
+                business_name: null,
+                about_business: null,
+                mobile: null,
+                email: null,
+                company_size: null,
+                orgSuccess: false,
+            },
+
         },
         subscribe: {
             email: null,
@@ -126,9 +143,9 @@ var home = new Vue({
             }
             if (window.location.href.indexOf("projects-lists") > 0) { //summary page
                 this.getNews();
-                this.activeLink = "youthEmpowerment";
+                this.activeLink = "projects";
                 if (this.readQueryString('activeList')) {
-                    this.newsPage.activeList = this.readQueryString('activeList');
+                    this.projectsPage.activeList = this.readQueryString('activeList');
                 }
             }
             if (window.location.href.indexOf("news-detailed") > 0) { //detailed news page
@@ -139,6 +156,10 @@ var home = new Vue({
             if (window.location.href.indexOf("library-list") > 0) { //detailed news page
                 this.getNews();
                 this.activeLink = "library";
+            }
+            if (window.location.href.indexOf("careers-list") > 0) { //detailed news page
+                this.getNews();
+                this.activeLink = "careers";
             }
 
             if (window.location.href.indexOf("contacts") > 0) {
@@ -151,152 +172,79 @@ var home = new Vue({
             }
         },
         getHome() {
+            var lan = 'en';
+            if (this.language == 'ar') {
+                lan = 'ar'
+            }
             var self = this;
             this.loading = true;
-            if (this.language == 'ar') {
-                axios.get("http://cms.jyif.org/ar/api/home")
-                    .then(function (response) {
-                        self.home = response.data.data.home;
-                        self.news = response.data.data.news;
-                        self.events = response.data.data.events;
-                        self.about = response.data.data.about;
-                        self.gallery = response.data.data.gallery;
-                        self.partner_images = response.data.data.partner_images;
-                        self.about_pages.aboutTabs = response.data.data.about_pages;
-                        self.gallery_images = response.data.data.gallery_images;
-                        self.partners = response.data.data.partners;
-                        self.library = response.data.data.library;
-                        self.library_resources.libraryList = response.data.data.library_resources;
-                        self.featured_projects = response.data.data.featured_projects;
-                        self.loading = false;
-                        setTimeout(() => {
-                            if (self.activeLink == 'home') {
-                                self.initPhotoAblum();
-                                self.scrollToSection();
-                                $(function () {
-                                    $("a[href*='#']:not([href='#'])").click(function (e) {
-                                        e.preventDefault();
-                                        setTimeout(() => {
-                                            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                                                home.scrollToSection(e.target.hash);
-                                            }
-                                        }, 100);
-                                    });
+            axios.get("http://cms.jyif.org/" + lan + "/api/home")
+                .then(function (response) {
+                    self.home = response.data.data.home;
+                    self.news = response.data.data.news;
+                    self.events = response.data.data.events;
+                    self.about = response.data.data.about;
+                    self.gallery = response.data.data.gallery;
+                    self.partner_images = response.data.data.partner_images;
+                    self.about_pages.aboutTabs = response.data.data.about_pages;
+                    self.gallery_images = response.data.data.gallery_images;
+                    self.partners = response.data.data.partners;
+                    self.library = response.data.data.library;
+                    self.library_resources.libraryList = response.data.data.library_resources;
+                    self.featured_projects = response.data.data.featured_projects;
+                    self.loading = false;
+                    setTimeout(() => {
+                        if (self.activeLink == 'home') {
+                            self.initPhotoAblum();
+                            self.scrollToSection();
+                            $(function () {
+                                $("a[href*='#']:not([href='#'])").click(function (e) {
+                                    e.preventDefault();
+                                    setTimeout(() => {
+                                        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                                            home.scrollToSection(e.target.hash);
+                                        }
+                                    }, 100);
                                 });
-                            }
-                        }, 300);
-                    })
-            } else {
-                axios.get("http://cms.jyif.org/en/api/home")
-                    .then(function (response) {
-                        self.home = response.data.data.home;
-                        self.news = response.data.data.news;
-                        self.events = response.data.data.events;
-                        self.about = response.data.data.about;
-                        self.gallery = response.data.data.gallery;
-                        self.partner_images = response.data.data.partner_images;
-                        self.about_pages.aboutTabs = response.data.data.about_pages;
-                        self.gallery_images = response.data.data.gallery_images;
-                        self.partners = response.data.data.partners;
-                        self.library = response.data.data.library;
-                        self.library_resources.libraryList = response.data.data.library_resources;
-                        self.featured_projects = response.data.data.featured_projects;
-                        self.loading = false;
-                        setTimeout(() => {
-                            if (self.activeLink == 'home') {
-                                self.initPhotoAblum();
-                                self.scrollToSection();
-                                $(function () {
-                                    $("a[href*='#']:not([href='#'])").click(function (e) {
-                                        e.preventDefault();
-                                        setTimeout(() => {
-                                            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                                                home.scrollToSection(e.target.hash);
-                                            }
-                                        }, 100);
-                                    });
-                                });
-                            }
-                        }, 300);
-                    })
-            }
+                            });
+                        }
+                    }, 300);
+                })
         },
         getNews() {
+            var lan = 'en';
+            if (this.language == 'ar') {
+                lan = 'ar'
+            }
             var self = this;
             this.loading = true;
-            if (this.language == 'ar') {
-                axios.get("http://cms.jyif.org/ar/api/news")
-                    .then(function (response) {
-                        self.newsPage.newsList = response.data.news;
-                        axios.get("http://cms.jyif.org/ar/api/events")
-                            .then(function (response) {
-                                self.newsPage.eventsList = response.data.data.events;
-                                axios.get("http://cms.jyif.org/en/api/our-projects/0")
-                                    .then(function (response) {
-                                        self.projectsPage.youthEmpowerment = response.data.projects;
-                                        axios.get("http://cms.jyif.org/en/api/our-projects/1")
-                                            .then(function (response) {
-                                                self.projectsPage.youthParticipation = response.data.projects;
-                                                axios.get("http://cms.jyif.org/en/api/our-projects/2")
-                                                    .then(function (response) {
-                                                        self.projectsPage.capacity = response.data.projects;
-                                                        axios.get("http://cms.jyif.org/en/api/our-projects/3")
-                                                            .then(function (response) {
-                                                                self.projectsPage.socialDevelopment = response.data.projects;
-                                                                axios.get("http://cms.jyif.org/ar/api/library")
-                                                                    .then(function (response) {
-                                                                        self.loading = false;
-                                                                        self.library_resources.libraryList = response.data.data.resources;
-                                                                        if (self.activeLink == 'news-detailed') {
-                                                                            self.newsPage.activeList = self.readQueryString('page-type');
-                                                                            if (self.readQueryString('news-id')) {
-                                                                                self.getDetailedNews(self.readQueryString('news-id'), self.readQueryString('page-type'));
-                                                                            }
-                                                                        }
-                                                                    })
-                                                            })
-                                                    })
-                                            })
-                                    })
-                            })
-                    })
-            } else {
-                axios.get("http://cms.jyif.org/en/api/news")
-                    .then(function (response) {
-                        self.newsPage.newsList = response.data.news;
-                        axios.get("http://cms.jyif.org/en/api/events")
-                            .then(function (response) {
-                                self.newsPage.eventsList = response.data.data.events;
-                                axios.get("http://cms.jyif.org/en/api/our-projects/0")
-                                    .then(function (response) {
-                                        self.projectsPage.youthEmpowerment = response.data.projects;
-                                        axios.get("http://cms.jyif.org/en/api/our-projects/1")
-                                            .then(function (response) {
-                                                self.projectsPage.youthParticipation = response.data.projects;
-                                                axios.get("http://cms.jyif.org/en/api/our-projects/2")
-                                                    .then(function (response) {
-                                                        self.projectsPage.capacity = response.data.projects;
-                                                        axios.get("http://cms.jyif.org/en/api/our-projects/3")
-                                                            .then(function (response) {
-                                                                self.projectsPage.socialDevelopment = response.data.projects;
-                                                                axios.get("http://cms.jyif.org/en/api/library")
-                                                                    .then(function (response) {
-                                                                        self.loading = false;
-                                                                        self.library_resources.libraryList = response.data.data.resources;
-                                                                        if (self.activeLink == 'news-detailed') {
-                                                                            self.newsPage.activeList = self.readQueryString('page-type');
-                                                                            if (self.readQueryString('news-id')) {
-                                                                                self.getDetailedNews(self.readQueryString('news-id'), self.readQueryString('page-type'));
-                                                                            }
-                                                                        }
-                                                                    })
-                                                            })
-                                                    })
-                                            })
-                                    })
-                            })
-                    })
-            }
+            axios.get("http://cms.jyif.org/" + lan + "/api/news")
+                .then(function (response) {
+                    self.newsPage.newsList = response.data.news;
+                    axios.get("http://cms.jyif.org/" + lan + "/api/events")
+                        .then(function (response) {
+                            self.newsPage.eventsList = response.data.data.events;
+                            axios.get("http://cms.jyif.org/" + lan + "/api/careers")
+                                .then(function (response) {
+                                    self.careersPage.careersList = response.data.careers;
+                                    axios.get("http://cms.jyif.org/" + lan + "/api/our-projects")
+                                        .then(function (response) {
+                                            self.projectsPage.projectsList = response.data.projects;
+                                            axios.get("http://cms.jyif.org/" + lan + "/api/library")
+                                                .then(function (response) {
+                                                    self.loading = false;
+                                                    self.library_resources.libraryList = response.data.data.resources;
+                                                    if (self.activeLink == 'news-detailed') {
+                                                        self.newsPage.activeList = self.readQueryString('page-type');
+                                                        if (self.readQueryString('news-id')) {
+                                                            self.getDetailedNews(self.readQueryString('news-id'), self.readQueryString('page-type'));
+                                                        }
+                                                    }
+                                                })
+                                        })
+                                })
+                        })
+                })
 
         },
         getDetailedNews(newsId, pageType) {
@@ -304,45 +252,45 @@ var home = new Vue({
                 newsList = this.newsPage.eventsList;
             } else if (pageType == 'news') {
                 newsList = this.newsPage.newsList;
+            } else if (pageType == 'careers') {
+                newsList = this.careersPage.careersList;
+            } else if (pageType == 'projects') {
+                newsList = this.projectsPage.projectsList;
+                this.activeLink = "projects";
+                this.newsPage.activeList = "projects";
             } else if (pageType == 'library') {
                 newsList = this.library_resources.libraryList;
                 this.activeLink = "library";
                 this.newsPage.activeList = "library";
             }
+
             this.newsPage.detailedNews = newsList.filter(obj => {
                 return obj.id === parseInt(newsId);
             })
         },
         getِAbout() {
+            var lan = 'en';
+            if (this.language == 'ar') {
+                lan = 'ar'
+            }
             var self = this;
             this.loading = true;
-            if (this.language == 'ar') {
-                axios.get("http://cms.jyif.org/ar/api/about/pages")
-                    .then(function (response) {
-                        self.about_pages.aboutContent = response.data.data.pages;
-                        self.loading = false;
-                    })
-            } else {
-                axios.get("http://cms.jyif.org/en/api/about/pages")
-                    .then(function (response) {
-                        self.about_pages.aboutContent = response.data.data.pages;
-                        self.loading = false;
-                    })
-            }
+            axios.get("http://cms.jyif.org/" + lan + "/api/about/pages")
+                .then(function (response) {
+                    self.about_pages.aboutContent = response.data.data.pages;
+                    self.loading = false;
+                })
         },
         getFooter() {
-            var self = this;
+            var lan = 'en';
             if (this.language == 'ar') {
-                axios.get("http://cms.jyif.org/ar/api/contact-us/info")
-                    .then(function (response) {
-                        self.footer.contact_info = response.data.data;
-                    })
-            } else {
-                axios.get("http://cms.jyif.org/en/api/contact-us/info")
-                    .then(function (response) {
-                        self.footer.contact_info = response.data.data;
-                    })
+                lan = 'ar'
             }
+            var self = this;
+            axios.get("http://cms.jyif.org/" + lan + "/api/contact-us/info")
+                .then(function (response) {
+                    self.footer.contact_info = response.data.data;
+                })
         },
         initPhotoAblum() {
             if (this.language == 'en') {
@@ -745,10 +693,10 @@ var home = new Vue({
         },
         postRegister(form) {
             if (this.validateForm(form)) {
-                var postBody = this.registerPage;
+                var postBody = this.registerPage.individual;
                 axios.post(this.serverPath + 'registration/save', postBody)
                     .then(function (response) {
-                        home.registerPage = {
+                        home.registerPage.individual = {
                             first_name: null,
                             last_name: null,
                             date_of_birth: null,
@@ -763,13 +711,41 @@ var home = new Vue({
                             count_team_members: null,
                             gender: null,
                             home_address: null,
-                            regSuccess: true,
+                            indSuccess: true,
                         }
                         setTimeout(function () {
-                            $('#regSuccess').fadeOut('slow')
+                            $('#indSuccess').fadeOut('slow')
                         }, 3000)
                         setTimeout(function () {
-                            // location.reload();
+                            location.reload();
+                        }, 2000)
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            }
+        },
+        postRegister(form) {
+            if (this.validateForm(form)) {
+                var postBody = this.registerPage.organization;
+                axios.post(this.serverPath + 'en/api/company/registration/save', postBody)
+                    .then(function (response) {
+                        home.registerPage.organization = {
+                            business_owner_name: null,
+                            country: null,
+                            address: null,
+                            business_name: null,
+                            about_business: null,
+                            mobile: null,
+                            email: null,
+                            company_size: null,
+                            orgSuccess: true,
+                        }
+                        setTimeout(function () {
+                            $('#orgSuccess').fadeOut('slow')
+                        }, 3000)
+                        setTimeout(function () {
+                            location.reload();
                         }, 2000)
                     })
                     .catch(function (error) {

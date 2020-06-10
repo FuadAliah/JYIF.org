@@ -39,7 +39,7 @@ html {
         line-height: 4rem;
         @media (max-width: 768px) {
           font-size: 3rem;
-        line-height: 2rem;
+          line-height: 2rem;
         }
       }
       .textMessage {
@@ -58,7 +58,9 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-.news-events-lists {
+.news-events-lists,
+.projects-lists,
+.careers-lists {
   .news-content,
   .events-content {
     .content-list {

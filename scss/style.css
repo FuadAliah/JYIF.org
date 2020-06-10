@@ -6,6 +6,7 @@ html {
 .html,
 .body {
   overflow: hidden;
+  font-family: "Montserrat";
 }
 
 @media (max-width: 576px) {
@@ -13,6 +14,10 @@ html {
   .body {
     overflow: auto;
   }
+}
+
+a:not([href]) {
+  cursor: pointer;
 }
 
 .bold {
@@ -366,6 +371,13 @@ section {
   width: 55%;
 }
 
+@media (max-width: 576px) {
+  .home .home_title {
+    font-size: 2rem;
+    width: 80%;
+  }
+}
+
 .home .toNews a {
   font-size: 18px;
   -webkit-transition: all 0.3s ease-in-out;
@@ -400,7 +412,7 @@ section {
 
 @media (max-width: 768px) {
   .home .logo-white img {
-    height: 70px;
+    height: 170px;
   }
   .home .register {
     background-color: #d62b4d;
@@ -423,6 +435,22 @@ section {
   .home .side {
     background: transparent;
   }
+}
+
+.home .side .projects_links li {
+  position: relative;
+}
+
+.home .side .projects_links li:after {
+  content: "\f105";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-weight: 900;
+  font-family: "Font Awesome\ 5 Free";
+  font-size: 20px;
 }
 
 .home .side .social {
@@ -483,6 +511,7 @@ section {
 
 .home .social-mobile {
   bottom: 40px;
+  width: 88%;
 }
 
 .news {
@@ -723,6 +752,10 @@ section {
 .about .head-content .section-link:hover {
   color: #19a2e0;
   background-color: #fff;
+}
+
+.about .head-content .section-link:focus {
+  outline: 0;
 }
 
 @media (max-width: 768px) {

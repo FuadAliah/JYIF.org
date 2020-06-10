@@ -38,6 +38,9 @@
                     <a href="./index.html#about" :class="[activeLink == 'about' ? 'active' : '']"
                         @click="activeLink = 'about'"
                         class="list-group-item-action w-100 text-uppercase">{{tr.about}}</a>
+                    <a href="./index.html#projects" :class="[activeLink == 'projects' ? 'active' : '']"
+                        @click="activeLink = 'projects'"
+                        class="list-group-item-action w-100 text-uppercase">{{tr.projects}}</a>
                     <a href="./index.html#gallery" :class="[activeLink == 'gallery' ? 'active' : '']"
                         @click="activeLink = 'gallery'"
                         class="list-group-item-action w-100 text-uppercase">{{tr.gallery}}</a>
@@ -82,16 +85,24 @@
                                 v-if="readQueryString('page-type')!='library'"
                                 :style="language=='ar' ? 'margin: -3px 0;font-weight: 600;' : ''">
                                 <i class="fas mr-2" :class="[language=='ar' ? 'fa-angle-right' : 'fa-angle-left']"
-                                    :style="language=='ar' ? 'vertical-align: sub;' : ''"></i>{{tr.back}}</a>
+                                    :style="language=='ar' ? 'vertical-align: sub;' : ''"></i>{{tr.back}}
+                            </a>
                             <a class="nav-link py-0 px-4"
                                 :href="'./library-list.html?activeList='+readQueryString('page-type')"
                                 v-if="readQueryString('page-type')=='library'">
                                 <i class="fas mr-2"
-                                    :class="[language=='ar' ? 'fa-angle-right' : 'fa-angle-left']"></i>{{tr.back}}</a>
+                                    :class="[language=='ar' ? 'fa-angle-right' : 'fa-angle-left']"></i>{{tr.back}}
+                            </a>
+                            <a class="nav-link py-0 px-4"
+                                :href="'./projects-lists.html?activeList='+readQueryString('page-type')"
+                                v-if="readQueryString('page-type')=='projects'"
+                                :style="language=='ar' ? 'margin: -3px 0;font-weight: 600;' : ''">
+                                <i class="fas mr-2" :class="[language=='ar' ? 'fa-angle-right' : 'fa-angle-left']"
+                                    :style="language=='ar' ? 'vertical-align: sub;' : ''"></i>{{tr.back}}
+                            </a>
                         </li>
                         <li class="nav-item border-right active">
                             <a class="nav-link py-0 px-4 text-uppercase">{{translate(newsPage.activeList)}}</a>
-                            <!-- <a class="nav-link py-0 px-4 text-uppercase" v-if="activeLink=='library'">{{tr.libraryTab}}</a> -->
                         </li>
                     </ul>
                 </div>
@@ -141,7 +152,8 @@
                 <div class="container-fluid">
                     <div class="row h-100" v-if="newsPage.detailedNews">
                         <div class="col-md-4 h-md-100 bg-white h-auto side-list" data-aos="fade-right">
-                            <img :src="serverPath+newsPage.detailedNews[0].img" class="w-100" alt="" style="height: 411px; object-fit: cover;">
+                            <img :src="serverPath+newsPage.detailedNews[0].img" class="w-100" alt=""
+                                style="height: 411px; object-fit: cover;">
                         </div>
                         <div class="col-md-8 content bg-white h-auto" data-aos="fade-left">
                             <div class="container">
@@ -219,8 +231,7 @@
                                         </li>
                                         <li class="py-1">
                                             <p class="m-0 text-secondary"><i class="fas fa-envelope mr-1"></i>
-                                                <a href="mailto:info@streetsportsincubator.org"
-                                                    class="text-secondary">
+                                                <a href="mailto:info@streetsportsincubator.org" class="text-secondary">
                                                     {{ footer.contact_info.info[0].contact_email }}
                                                 </a>
                                             </p>
@@ -270,8 +281,8 @@
                 <div
                     class="copy-rights p-2 px-2 px-md-5 d-flex justify-content-between flex-column flex-md-row text-center text-md-left">
                     <h6 class="m-0"><small>{{ footer.contact_info.info[0].copy_write }}</small></h6 class="p-0">
-                    <h6 class="m-0 mt-2 mt-md-0"><small>{{tr.powered}}<a href="http://www.eappera.com"
-                                target="_blank" class="text-info">EappEra</a></small>
+                    <h6 class="m-0 mt-2 mt-md-0"><small>{{tr.powered}}<a href="http://www.eappera.com" target="_blank"
+                                class="text-info">EappEra</a></small>
                     </h6>
                 </div>
             </div>

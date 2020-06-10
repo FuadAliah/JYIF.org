@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html class="html" :dir="language=='ar' ? 'rtl' : 'ltr'">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1, maximum-scale=1">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-<link rel="stylesheet" href="./lightbox2-dev/dist/css/lightbox.css">
-<link rel="stylesheet" href="./scss/aos.css">
-<link rel="stylesheet" href="./scss/fonts.css">
-<link rel="stylesheet" type="text/css" href="./scss/slick.css" />
-<link rel="stylesheet" type="text/css" href="./scss/slick-theme.css" />
-<link rel="stylesheet" href="./scss/ar_fonts.css">
-<link rel="stylesheet" href="./scss/style.css">
-<script type="text/javascript" src="./js/axios.min.js"></script>
-<link rel="shortcut icon" type="image/gif" href="./imgs/logo-animation.gif">
-<title>Street sports incubator</title>
+
+<head>
+    <html class="html" :dir="language=='ar' ? 'rtl' : 'ltr'">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="./lightbox2-dev/dist/css/lightbox.css">
+    <link rel="stylesheet" href="./scss/aos.css">
+    <link rel="stylesheet" href="./scss/fonts.css">
+    <link rel="stylesheet" type="text/css" href="./scss/slick.css" />
+    <link rel="stylesheet" type="text/css" href="./scss/slick-theme.css" />
+    <link rel="stylesheet" href="./scss/ar_fonts.css">
+    <link rel="stylesheet" href="./scss/style.css">
+    <script type="text/javascript" src="./js/axios.min.js"></script>
+    <link rel="shortcut icon" type="image/gif" href="./imgs/logo-animation.gif">
+    <title>Street sports incubator</title>
+</head>
 
 <body class="body">
     <div id="app" :class="language">
@@ -51,15 +55,19 @@
                     <div class="mt-auto">
                         <div class="d-flex text-center languages-links">
                             <a href="javascript:void(0)" @click="setLanguage('en')"
-                                class="list-group-item-action w-100 text-uppercase"
-                                style="font-family: Soho Pro;">English</a>
+                                class="list-group-item-action w-100 text-uppercase">English</a>
                             <a href="javascript:void(0)" @click="setLanguage('ar')"
                                 class="list-group-item-action w-100 ar-link">عربي</a>
                         </div>
+                        <a href="./careers-lists.html"
+                            class="list-group-item-action w-100 bg-blue text-uppercase">{{tr.careers}}
+                        </a>
                         <a href="./registration.html"
-                            class="list-group-item-action w-100 bg-orange text-uppercase">{{tr.registration}}</a>
+                            class="list-group-item-action w-100 bg-orange text-uppercase">{{tr.registration}}
+                        </a>
                         <a href="./contacts.html"
-                            class="list-group-item-action w-100 bg-red text-uppercase">{{tr.Contact_us}}</a>
+                            class="list-group-item-action w-100 bg-red text-uppercase">{{tr.Contact_us}}
+                        </a>
                     </div>
                 </div>
             </div>
@@ -94,35 +102,50 @@
 
                 </div>
                 <div class="side position-absolute d-none d-lg-flex flex-column p-5">
-                    <div class="projects text-left text-dark h-50">
+                    <div class="text-left text-dark h-50">
                         <h4 class="regular text-uppercase m-0">our
                             <h4 class="bold text-uppercase m-0 mb-4">Works</h4>
                         </h4>
                         <ul class="projects_links p-0">
-                            <li class="border-bottom text-uppercase py-3 regular">Youth empowerment</li>
-                            <li class="border-bottom text-uppercase py-3 regular">Youth participation & engagement</li>
-                            <li class="border-bottom text-uppercase py-3 regular">Capacity building</li>
-                            <li class="border-bottom text-uppercase py-3 regular">SOCIAL INCLUSION AND DEVELOPMENT</li>
+                            <li class="border-bottom text-uppercase py-3 regular">
+                                <a href="./projects-lists.html?activeList=youthEmpowerment"
+                                    class="text-dark">{{tr.key_0}}</a>
+                            </li>
+                            <li class="border-bottom text-uppercase py-3 regular">
+                                <a href="./projects-lists.html?activeList=youthParticipation"
+                                    class="text-dark">{{tr.key_1}}</a>
+                            </li>
+                            <li class="border-bottom text-uppercase py-3 regular">
+                                <a href="./projects-lists.html?activeList=capacity" class="text-dark">{{tr.key_2}}</a>
+                            </li>
+                            <li class="border-bottom text-uppercase py-3 regular">
+                                <a href="./projects-lists.html?activeList=socialDevelopment"
+                                    class="text-dark">{{tr.key_3}}</a>
+                            </li>
                         </ul>
-
                     </div>
                     <div class="social d-flex text-left justify-content-between flex-column">
                         <h4 class="regular text-uppercase m-0">follow
                             <h4 class="bold text-uppercase m-0 mb-4">us</h4>
                         </h4>
                         <a href="{{home.fb_link}}" class="text-dark" target="_blank">
-                            <i class="fab fa-facebook-f fa-lg mr-3"></i>{{tr.facebook}}</a>
+                            <i class="fab fa-facebook-f fa-lg"
+                                :class="[language == 'en' ? 'mr-3 ml-0' : 'mr-3 ml-0']"></i>{{tr.facebook}}</a>
                         <a href="{{home.tw_link}}" class="text-dark" target="_blank">
-                            <i class="fab fa-twitter fa-lg mr-3"></i>{{tr.twitter}}</a>
+                            <i class="fab fa-twitter fa-lg"
+                                :class="[language == 'en' ? 'mr-3 ml-0' : 'mr-3 ml-0']"></i>{{tr.twitter}}</a>
                         <a href="{{home.yt_link}}" class="text-dark" target="_blank">
-                            <i class="fab fa-youtube fa-lg mr-3"></i>{{tr.youtube}}</a>
+                            <i class="fab fa-youtube fa-lg"
+                                :class="[language == 'en' ? 'mr-3 ml-0' : 'mr-3 ml-0']"></i>{{tr.youtube}}</a>
                         <a href="{{home.in_link}}" class="text-dark" target="_blank">
-                            <i class="fab fa-linkedin fa-lg mr-3"></i>{{tr.linkedin}}</a>
+                            <i class="fab fa-linkedin fa-lg"
+                                :class="[language == 'en' ? 'mr-3 ml-0' : 'mr-3 ml-0']"></i>{{tr.linkedin}}</a>
                         <a href="{{home.ig_link}}" class="text-dark" target="_blank">
-                            <i class="fab fa-instagram fa-lg mr-3"></i>{{tr.instagram}}</a>
+                            <i class="fab fa-instagram fa-lg"
+                                :class="[language == 'en' ? 'mr-3 ml-0' : 'mr-3 ml-0']"></i>{{tr.instagram}}</a>
                     </div>
                 </div>
-                <div class="social social-mobile position-absolute w-100 d-block d-lg-none">
+                <div class="social social-mobile position-absolute d-block d-lg-none">
                     <div class="d-flex justify-content-between px-md-5">
                         <a href="{{home.fb_link}}" class="text-white" target="_blank"><i
                                 class="fab fa-facebook-f fa-lg mr-2"></i></a>
@@ -307,7 +330,7 @@
                         <div class="modal-dialog custom-dialog" role="document">
                             <div class="modal-content">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true" style="font-family: Soho Pro">&times;</span>
+                                    <span aria-hidden="true">&times;</span>
                                 </button>
                                 <div class="modal-body p-2">
                                     <div class="embed-responsive embed-responsive-16by9">
@@ -403,7 +426,8 @@
                         data-aos-delay="200" data-aos-anchor=".projects">
                         <div class="section-title text-white text-uppercase">{{tr.section_title}}</div>
                         <div class="section-body">{{tr.section_description}}</div>
-                        <a href="./projects-lists.html?activeList=youthEmpowerment" class="section-link mt-lg-4 mt-3 rounded">
+                        <a href="./projects-lists.html?activeList=youthEmpowerment"
+                            class="section-link mt-lg-4 mt-3 rounded">
                             <span class="text-uppercase">{{tr.seeList}}</span>
                         </a>
                     </div>
@@ -411,11 +435,13 @@
                         data-aos-anchor=".projects">
                         <div class="h-100">
                             <div class="home-photoAlbum">
-                                <a :href="photo.link" class="gallery-item position-relative" target="_blank"
-                                    v-for="photo in featured_projects">
-                                    <img :src="serverPath+photo.img" />
+                                <a :href="'./news-detailed.html?news-id='+item.id+'&page-type=projects'"
+                                    class="library-item position-relative" v-for="item in featured_projects">
+                                    <img :src="serverPath+item.img" />
                                     <div class="overlay position-absolute">
-                                        <div class="text">{{ photo.title }}</div>
+                                        <div class="text">{{ item.title }}
+                                            <p class="m-0 mt-2 text-blue">{{tr.read_more}}</p>
+                                        </div>
                                     </div>
                                 </a>
                             </div>
@@ -586,7 +612,7 @@
                     <div class="row px-4 pt-5 p-md-5">
                         <div class="col-12 col-md-4 mt-4 mt-md-0">
                             <div class="footer-logo">
-                                <img src="./imgs/footer-logo.png" alt="" height="60">
+                                <img src="./imgs/footer-logo.png" alt="" height="140">
                             </div>
                         </div>
                         <div class="col-12 col-md-8">

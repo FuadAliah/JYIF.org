@@ -63,7 +63,11 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .news-events-lists .news-content .content-list,
-.news-events-lists .events-content .content-list {
+.news-events-lists .events-content .content-list,
+.projects-lists .news-content .content-list,
+.projects-lists .events-content .content-list,
+.careers-lists .news-content .content-list,
+.careers-lists .events-content .content-list {
   background-color: #f6f4e2 !important;
   padding-left: 0;
   padding-right: 30px;
@@ -71,19 +75,31 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .news-events-lists .news-content .content-list .custom-container,
-.news-events-lists .events-content .content-list .custom-container {
+.news-events-lists .events-content .content-list .custom-container,
+.projects-lists .news-content .content-list .custom-container,
+.projects-lists .events-content .content-list .custom-container,
+.careers-lists .news-content .content-list .custom-container,
+.careers-lists .events-content .content-list .custom-container {
   max-width: 100%;
 }
 
 @media (max-width: 768px) {
   .news-events-lists .news-content .content-list .custom-container,
-  .news-events-lists .events-content .content-list .custom-container {
+  .news-events-lists .events-content .content-list .custom-container,
+  .projects-lists .news-content .content-list .custom-container,
+  .projects-lists .events-content .content-list .custom-container,
+  .careers-lists .news-content .content-list .custom-container,
+  .careers-lists .events-content .content-list .custom-container {
     max-width: 100%;
   }
 }
 
 .news-events-lists .news-content .content-list .custom-container .news-item,
-.news-events-lists .events-content .content-list .custom-container .news-item {
+.news-events-lists .events-content .content-list .custom-container .news-item,
+.projects-lists .news-content .content-list .custom-container .news-item,
+.projects-lists .events-content .content-list .custom-container .news-item,
+.careers-lists .news-content .content-list .custom-container .news-item,
+.careers-lists .events-content .content-list .custom-container .news-item {
   margin-left: -30px;
   height: auto;
   overflow: hidden;
@@ -96,25 +112,41 @@ input[type="number"]::-webkit-outer-spin-button {
 
 @media (max-width: 768px) {
   .news-events-lists .news-content .content-list .custom-container .news-item,
-  .news-events-lists .events-content .content-list .custom-container .news-item {
+  .news-events-lists .events-content .content-list .custom-container .news-item,
+  .projects-lists .news-content .content-list .custom-container .news-item,
+  .projects-lists .events-content .content-list .custom-container .news-item,
+  .careers-lists .news-content .content-list .custom-container .news-item,
+  .careers-lists .events-content .content-list .custom-container .news-item {
     height: auto;
   }
 }
 
 .news-events-lists .news-content .content-list .custom-container .news-item:hover,
-.news-events-lists .events-content .content-list .custom-container .news-item:hover {
+.news-events-lists .events-content .content-list .custom-container .news-item:hover,
+.projects-lists .news-content .content-list .custom-container .news-item:hover,
+.projects-lists .events-content .content-list .custom-container .news-item:hover,
+.careers-lists .news-content .content-list .custom-container .news-item:hover,
+.careers-lists .events-content .content-list .custom-container .news-item:hover {
   background: #faf8ee;
 }
 
 .news-events-lists .news-content .content-list .custom-container .news-item .img-news img,
-.news-events-lists .events-content .content-list .custom-container .news-item .img-news img {
+.news-events-lists .events-content .content-list .custom-container .news-item .img-news img,
+.projects-lists .news-content .content-list .custom-container .news-item .img-news img,
+.projects-lists .events-content .content-list .custom-container .news-item .img-news img,
+.careers-lists .news-content .content-list .custom-container .news-item .img-news img,
+.careers-lists .events-content .content-list .custom-container .news-item .img-news img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .news-events-lists .news-content .content-list .custom-container .news-item .content-news .news-card .card-title,
-.news-events-lists .events-content .content-list .custom-container .news-item .content-news .news-card .card-title {
+.news-events-lists .events-content .content-list .custom-container .news-item .content-news .news-card .card-title,
+.projects-lists .news-content .content-list .custom-container .news-item .content-news .news-card .card-title,
+.projects-lists .events-content .content-list .custom-container .news-item .content-news .news-card .card-title,
+.careers-lists .news-content .content-list .custom-container .news-item .content-news .news-card .card-title,
+.careers-lists .events-content .content-list .custom-container .news-item .content-news .news-card .card-title {
   font-size: 1.75rem;
   line-height: 2.625rem;
   font-weight: 500;
@@ -123,7 +155,11 @@ input[type="number"]::-webkit-outer-spin-button {
 
 @media (max-width: 768px) {
   .news-events-lists .news-content .content-list .custom-container .news-item .content-news .news-card .card-title,
-  .news-events-lists .events-content .content-list .custom-container .news-item .content-news .news-card .card-title {
+  .news-events-lists .events-content .content-list .custom-container .news-item .content-news .news-card .card-title,
+  .projects-lists .news-content .content-list .custom-container .news-item .content-news .news-card .card-title,
+  .projects-lists .events-content .content-list .custom-container .news-item .content-news .news-card .card-title,
+  .careers-lists .news-content .content-list .custom-container .news-item .content-news .news-card .card-title,
+  .careers-lists .events-content .content-list .custom-container .news-item .content-news .news-card .card-title {
     font-size: 1.5rem;
     line-height: 2.25rem;
     margin-bottom: 0.75rem;
@@ -131,19 +167,31 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .news-events-lists .news-content .content-list .custom-container .news-item .content-news .news-card h6,
-.news-events-lists .events-content .content-list .custom-container .news-item .content-news .news-card h6 {
+.news-events-lists .events-content .content-list .custom-container .news-item .content-news .news-card h6,
+.projects-lists .news-content .content-list .custom-container .news-item .content-news .news-card h6,
+.projects-lists .events-content .content-list .custom-container .news-item .content-news .news-card h6,
+.careers-lists .news-content .content-list .custom-container .news-item .content-news .news-card h6,
+.careers-lists .events-content .content-list .custom-container .news-item .content-news .news-card h6 {
   line-height: 28px;
 }
 
 @media (max-width: 768px) {
   .news-events-lists .news-content .content-list .custom-container .news-item .content-news .news-card,
-  .news-events-lists .events-content .content-list .custom-container .news-item .content-news .news-card {
+  .news-events-lists .events-content .content-list .custom-container .news-item .content-news .news-card,
+  .projects-lists .news-content .content-list .custom-container .news-item .content-news .news-card,
+  .projects-lists .events-content .content-list .custom-container .news-item .content-news .news-card,
+  .careers-lists .news-content .content-list .custom-container .news-item .content-news .news-card,
+  .careers-lists .events-content .content-list .custom-container .news-item .content-news .news-card {
     padding: 1.25rem;
   }
 }
 
 .news-events-lists .news-content .content-list .custom-container .divider,
-.news-events-lists .events-content .content-list .custom-container .divider {
+.news-events-lists .events-content .content-list .custom-container .divider,
+.projects-lists .news-content .content-list .custom-container .divider,
+.projects-lists .events-content .content-list .custom-container .divider,
+.careers-lists .news-content .content-list .custom-container .divider,
+.careers-lists .events-content .content-list .custom-container .divider {
   border-top: solid 1px #ded694;
   margin-right: -15px !important;
   margin-left: -15px !important;
@@ -151,7 +199,11 @@ input[type="number"]::-webkit-outer-spin-button {
 
 @media (max-width: 768px) {
   .news-events-lists .news-content .content-list .custom-container,
-  .news-events-lists .events-content .content-list .custom-container {
+  .news-events-lists .events-content .content-list .custom-container,
+  .projects-lists .news-content .content-list .custom-container,
+  .projects-lists .events-content .content-list .custom-container,
+  .careers-lists .news-content .content-list .custom-container,
+  .careers-lists .events-content .content-list .custom-container {
     padding-right: 0;
   }
 }

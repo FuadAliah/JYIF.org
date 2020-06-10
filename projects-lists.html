@@ -17,7 +17,7 @@
     <title>Street sports incubator</title>
 </head>
 
-<body class="news-events-lists">
+<body class="projects-lists">
     <div id="app" :class="language">
         <link rel="stylesheet" href="./scss/style_ar.css" v-if="language=='ar'">
         <link rel="stylesheet" href="./scss/internal-style_ar.css" v-if="language=='ar'">
@@ -142,22 +142,22 @@
                         <div class="col-md-8 content-list bg-white h-100 p-0"
                             :data-aos="[language=='ar' ? 'fade-right' : 'fade-left']">
                             <div class="container custom-container">
-                                <div class="row news-item" v-for="new in projectsPage.youthEmpowerment">
+                                <div class="row news-item" v-for="project in projectsPage.projectsList">
                                     <div class="col-md-4 img-news col-12 h-100">
-                                        <img class="w-100" :src="serverPath+new.img" alt="">
+                                        <img class="w-100" :src="serverPath+project.img" alt="">
                                     </div>
                                     <div class="col-md-8 content-news col-12 h-75 my-auto">
                                         <div class="news-card h-100 arrow-right">
                                             <div class="d-flex flex-column justify-content-between h-100">
                                                 <div class="d-flex justify-content-between">
                                                     <h6 class="card-info text-muted m-0"><small
-                                                            class="font-weight-bold">{{new.created_at.slice(0, 10)}}</small>
+                                                            class="font-weight-bold">{{project.created_at.slice(0, 10)}}</small>
                                                     </h6>
                                                 </div>
-                                                <a :href="'./news-detailed.html?news-id='+new.id+'&page-type=projects'"
-                                                    class="card-title text-red custom-title text-uppercase">{{new.title.slice(0, 32) + '...'}}</a>
+                                                <a :href="'./news-detailed.html?news-id='+project.id+'&page-type=projects'"
+                                                    class="card-title text-red custom-title text-uppercase">{{project.title.slice(0, 32) + '...'}}</a>
                                                 <p class="card-text custom-paragraph m-0">
-                                                    {{ new.text.slice(0, 200) + '...' }}
+                                                    {{ project.text.slice(0, 200) + '...' }}
                                                 </p>
                                             </div>
                                         </div>
@@ -181,22 +181,22 @@
                             :data-aos="[language=='ar' ? 'fade-right' : 'fade-left']">
                             <div class="container custom-container">
 
-                                <div class="row news-item" v-for="event in projectsPage.youthParticipation">
+                                <div class="row news-item" v-for="project in projectsPage.projectsList">
                                     <div class="col-md-4 img-news col-12 h-100">
-                                        <img class="w-100" :src="serverPath+event.img" alt="">
+                                        <img class="w-100" :src="serverPath+project.img" alt="">
                                     </div>
                                     <div class="col-md-8 content-news col-12 h-75 my-auto">
                                         <div class="news-card h-100 arrow-right">
                                             <div class="d-flex flex-column justify-content-between h-100">
                                                 <div class="d-flex justify-content-between">
                                                     <h6 class="card-info text-muted m-0"><small
-                                                            class="font-weight-bold">{{event.created_at.slice(0, 10)}}</small>
+                                                            class="font-weight-bold">{{project.created_at.slice(0, 10)}}</small>
                                                     </h6>
                                                 </div>
-                                                <a :href="'./news-detailed.html?news-id='+event.id+'&page-type=events'"
-                                                    class="card-title text-red custom-title text-uppercase">{{event.title.slice(0, 32) + '...'}}</a>
+                                                <a :href="'./news-detailed.html?news-id='+project.id+'&page-type=projects'"
+                                                    class="card-title text-red custom-title text-uppercase">{{project.title.slice(0, 32) + '...'}}</a>
                                                 <p class="card-text custom-paragraph m-0">
-                                                    {{ event.text.slice(0, 200) + '...' }}</p>
+                                                    {{ project.text.slice(0, 200) + '...' }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -219,22 +219,22 @@
                             :data-aos="[language=='ar' ? 'fade-right' : 'fade-left']">
                             <div class="container custom-container">
 
-                                <div class="row news-item" v-for="event in projectsPage.capacity">
+                                <div class="row news-item" v-for="project in projectsPage.projectsList">
                                     <div class="col-md-4 img-news col-12 h-100">
-                                        <img class="w-100" :src="serverPath+event.img" alt="">
+                                        <img class="w-100" :src="serverPath+project.img" alt="">
                                     </div>
                                     <div class="col-md-8 content-news col-12 h-75 my-auto">
                                         <div class="news-card h-100 arrow-right">
                                             <div class="d-flex flex-column justify-content-between h-100">
                                                 <div class="d-flex justify-content-between">
                                                     <h6 class="card-info text-muted m-0"><small
-                                                            class="font-weight-bold">{{event.created_at.slice(0, 10)}}</small>
+                                                            class="font-weight-bold">{{project.created_at.slice(0, 10)}}</small>
                                                     </h6>
                                                 </div>
-                                                <a :href="'./news-detailed.html?news-id='+event.id+'&page-type=events'"
-                                                    class="card-title text-red custom-title text-uppercase">{{event.title.slice(0, 32) + '...'}}</a>
+                                                <a :href="'./news-detailed.html?news-id='+project.id+'&page-type=projects'"
+                                                    class="card-title text-red custom-title text-uppercase">{{project.title.slice(0, 32) + '...'}}</a>
                                                 <p class="card-text custom-paragraph m-0">
-                                                    {{ event.text.slice(0, 200) + '...' }}</p>
+                                                    {{ project.text.slice(0, 200) + '...' }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -258,22 +258,22 @@
                             :data-aos="[language=='ar' ? 'fade-right' : 'fade-left']">
                             <div class="container custom-container">
 
-                                <div class="row news-item" v-for="event in projectsPage.socialDevelopment">
+                                <div class="row news-item" v-for="project in projectsPage.projectsList">
                                     <div class="col-md-4 img-news col-12 h-100">
-                                        <img class="w-100" :src="serverPath+event.img" alt="">
+                                        <img class="w-100" :src="serverPath+project.img" alt="">
                                     </div>
                                     <div class="col-md-8 content-news col-12 h-75 my-auto">
                                         <div class="news-card h-100 arrow-right">
                                             <div class="d-flex flex-column justify-content-between h-100">
                                                 <div class="d-flex justify-content-between">
                                                     <h6 class="card-info text-muted m-0"><small
-                                                            class="font-weight-bold">{{event.created_at.slice(0, 10)}}</small>
+                                                            class="font-weight-bold">{{project.created_at.slice(0, 10)}}</small>
                                                     </h6>
                                                 </div>
-                                                <a :href="'./news-detailed.html?news-id='+event.id+'&page-type=events'"
-                                                    class="card-title text-red custom-title text-uppercase">{{event.title.slice(0, 32) + '...'}}</a>
+                                                <a :href="'./news-detailed.html?news-id='+project.id+'&page-type=projects'"
+                                                    class="card-title text-red custom-title text-uppercase">{{project.title.slice(0, 32) + '...'}}</a>
                                                 <p class="card-text custom-paragraph m-0">
-                                                    {{ event.text.slice(0, 200) + '...' }}</p>
+                                                    {{ project.text.slice(0, 200) + '...' }}</p>
                                             </div>
                                         </div>
                                     </div>

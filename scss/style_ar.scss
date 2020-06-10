@@ -23,6 +23,10 @@ html {
   }
 }
 
+a:not([href]) {
+  cursor: pointer;
+}
+
 .loading {
   width: 100vw;
   height: 100vh;
@@ -161,7 +165,7 @@ html {
 body {
   max-width: 100vw;
   height: auto;
-  font-family: "Almarai", sans-serif;
+  font-family: "Almarai", sans-serif !important;
   direction: rtl;
   .modal-backdrop {
     display: none !important;
@@ -217,7 +221,7 @@ ul {
   }
 }
 .bg-blue {
-  color: #fff;
+  color: #fff !important;
   background-color: $blueColor;
   transition: $ease-in-out;
   &:hover {
@@ -282,6 +286,10 @@ section {
   .home_title {
     font-size: 2.5rem;
     width: 55%;
+    @media (max-width: 576px) {
+      font-size: 2rem;
+      width: 80%;
+    }
   }
 
   .toNews {
@@ -311,7 +319,7 @@ section {
   }
   @media (max-width: 768px) {
     .logo-white img {
-      height: 70px;
+      height: 170px;
     }
     .register {
       background-color: $redColor;
@@ -331,6 +339,22 @@ section {
 
     @media (max-width: 992px) {
       background: transparent;
+    }
+    .projects_links {
+      li {
+        position: relative;
+        &:after {
+          content: "\f104";
+          position: absolute;
+          right: unset;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          font-weight: 900;
+          font-family: "Font Awesome\ 5 Free";
+          font-size: 20px;
+        }
+      }
     }
 
     .social {
@@ -370,6 +394,7 @@ section {
   }
   .social-mobile {
     bottom: 40px;
+    width: 88%;
   }
 }
 
