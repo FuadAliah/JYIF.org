@@ -57,6 +57,9 @@
                     <a href="./index.html#about" :class="[activeLink == 'about' ? 'active' : '']"
                         @click="activeLink = 'about'"
                         class="list-group-item-action w-100 text-uppercase">{{tr.about}}</a>
+                    <a href="./index.html#projects" :class="[activeLink == 'projects' ? 'active' : '']"
+                        @click="activeLink = 'projects'"
+                        class="list-group-item-action w-100 text-uppercase">{{tr.projects}}</a>
                     <a href="./index.html#gallery" :class="[activeLink == 'gallery' ? 'active' : '']"
                         @click="activeLink = 'gallery'"
                         class="list-group-item-action w-100 text-uppercase">{{tr.gallery}}</a>
@@ -75,6 +78,9 @@
                             <a href="javascript:void(0)" @click="setLanguage('ar')"
                                 class="list-group-item-action w-100 ar-link">عربي</a>
                         </div>
+                        <a href="./careers-lists.html"
+                            class="list-group-item-action w-100 bg-blue text-uppercase">{{tr.careers}}
+                        </a>
                         <a href="./registration.html"
                             class="list-group-item-action w-100 bg-orange text-uppercase">{{tr.registration}}</a>
                         <a href="./contacts.html"
@@ -114,17 +120,30 @@
                     <div class="d-flex">
                         <ul class="navbar-nav">
                             <li class="nav-item border-right">
-                                <a href="#" class="nav-link py-0 px-4" onclick="goBack()">
-                                    <i class="fas mr-2"
-                                        :class="[language=='ar' ? 'fa-angle-right' : 'fa-angle-left']"></i>
-                                </a>
+                                <a class="nav-link py-0 px-4" href="./index.html"><i class="fas mr-2"
+                                        :class="[language=='ar' ? 'fa-angle-right' : 'fa-angle-left']"></i></a>
                             </li>
                         </ul>
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link py-0 px-4 text-uppercase">{{tr.register}}</a>
-                            </li>
-                        </ul>
+                        <div class="btn-group w-100">
+                            <div class="bg-white w-100 p-3 text-uppercase custom-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">{{translate(registerPage.activeList)}}
+                            </div>
+                            <div class="dropdown-menu p-0 custom-dropdown">
+
+                                <li class="nav-item" @click="registerPage.activeList = 'individual'"
+                                    :class="[registerPage.activeList == 'individual' ? 'active' : '']">
+                                    <a class="nav-link py-3 px-4 text-uppercase"
+                                        :class="[registerPage.activeList == 'individual' ? 'text-red' : 'text-dark']">{{tr.individual}}</a>
+                                </li>
+
+                                <li class="nav-item" @click="registerPage.activeList = 'organization'"
+                                    :class="[registerPage.activeList == 'organization' ? 'active' : '']">
+                                    <a class="nav-link py-3 px-4 text-uppercase"
+                                        :class="[registerPage.activeList == 'organization' ? 'text-red' : 'text-dark']">{{tr.organization}}</a>
+                                </li>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </nav>

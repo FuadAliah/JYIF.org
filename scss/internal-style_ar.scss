@@ -825,6 +825,9 @@ input[type="number"]::-webkit-outer-spin-button {
     font-weight: bold;
     color: $redColor;
     position: relative;
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
     &::before {
       content: "";
       display: block;

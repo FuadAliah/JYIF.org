@@ -1294,6 +1294,12 @@ input[type="number"]::-webkit-outer-spin-button {
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .side-list .list-title {
+    font-size: 2rem;
+  }
+}
+
 .side-list .list-title::before {
   content: "";
   display: block;

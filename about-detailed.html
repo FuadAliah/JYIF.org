@@ -37,6 +37,9 @@
                     <a href="./index.html#about" :class="[activeLink == 'about' ? 'active' : '']"
                         @click="activeLink = 'about'"
                         class="list-group-item-action w-100 text-uppercase">{{tr.about}}</a>
+                        <a href="./index.html#projects" :class="[activeLink == 'projects' ? 'active' : '']"
+                        @click="activeLink = 'projects'"
+                        class="list-group-item-action w-100 text-uppercase">{{tr.projects}}</a>
                     <a href="./index.html#gallery" :class="[activeLink == 'gallery' ? 'active' : '']"
                         @click="activeLink = 'gallery'"
                         class="list-group-item-action w-100 text-uppercase">{{tr.gallery}}</a>
@@ -55,6 +58,9 @@
                             <a href="javascript:void(0)" @click="setLanguage('ar')"
                                 class="list-group-item-action w-100 ar-link">عربي</a>
                         </div>
+                        <a href="./careers-lists.html"
+                            class="list-group-item-action w-100 bg-blue text-uppercase">{{tr.careers}}
+                        </a>
                         <a href="./registration.html"
                             class="list-group-item-action w-100 bg-orange text-uppercase">{{tr.registration}}</a>
                         <a href="./contacts.html"
@@ -113,7 +119,7 @@
                                 aria-haspopup="true" aria-expanded="false">
                                 <!-- {{about_pages.activeList.split('_').join(' ');}} -->
                                 {{translate(about_pages.activeList)}}
-                                
+
                             </div>
                             <div class="dropdown-menu p-0 custom-dropdown">
                                 <li class="nav-item" @click="about_pages.activeList = 'about_the_incubator'"
@@ -247,8 +253,7 @@
                                         </li>
                                         <li class="py-1">
                                             <p class="m-0 text-secondary"><i class="fas fa-envelope mr-1"></i>
-                                                <a href="mailto:info@streetsportsincubator.org"
-                                                    class="text-secondary">
+                                                <a href="mailto:info@streetsportsincubator.org" class="text-secondary">
                                                     {{ footer.contact_info.info[0].contact_email }}
                                                 </a>
                                             </p>
@@ -298,8 +303,8 @@
                 <div
                     class="copy-rights p-2 px-2 px-md-5 d-flex justify-content-between flex-column flex-md-row text-center text-md-left">
                     <h6 class="m-0"><small>{{ footer.contact_info.info[0].copy_write }}</small></h6 class="p-0">
-                    <h6 class="m-0 mt-2 mt-md-0"><small>{{tr.powered}}<a href="http://www.eappera.com"
-                                target="_blank" class="text-info">EappEra</a></small>
+                    <h6 class="m-0 mt-2 mt-md-0"><small>{{tr.powered}}<a href="http://www.eappera.com" target="_blank"
+                                class="text-info">EappEra</a></small>
                     </h6>
                 </div>
             </div>

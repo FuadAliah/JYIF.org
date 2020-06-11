@@ -36,6 +36,10 @@ var locales_en = {
     "key_1": "YOUTH PARTICIPATION & ENGAGEMENT",
     "key_2": "CAPACITY BUILDING",
     "key_3": "SOCIAL INCLUSION AND DEVELOPMENT",
+    "youthEmpowerment": "YOUTH EMPOWERMENT",
+    "youthParticipation": "YOUTH PARTICIPATION & ENGAGEMENT",
+    "capacity": "CAPACITY BUILDING",
+    "socialDevelopment": "SOCIAL INCLUSION AND DEVELOPMENT",
 
     //gallery_section
     "seeAll": "See All",

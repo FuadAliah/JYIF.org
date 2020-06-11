@@ -851,11 +851,12 @@ section {
 }
 
 .projects .section-tag::before {
-  content: "OUR PROJECTS";
+  content: "مشاريعنا";
   text-transform: uppercase;
   color: #424242;
   background: #fff;
-  margin-right: auto;
+  margin-right: unset;
+  margin-left: auto;
   line-height: 14px;
   padding: 10px 14px;
   font-weight: 700;

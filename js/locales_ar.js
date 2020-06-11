@@ -30,12 +30,18 @@ var locales_ar = {
     "watchVideo": "شاهد الفيديو",
 
     //project section
-    "section_title": "YOUTH EMPOWERMENT",
-    "section_description": "We are planning a series of recreational sports, music, and art events geared toward diverse youth.",
+    "section_title": "قسم مشاريعنا",
+    "section_description": "نص القسم",
     "key_0": "قوة شبابية",
     "key_1": "مشاركة الشباب وإشراكهم",
     "key_2": "بناء القدرات",
     "key_3": "الدمج الاجتماعي والتنمية",
+    "youthEmpowerment": "قوة شبابية",
+    "youthParticipation": "مشاركة الشباب وإشراكهم",
+    "key_1": "مشاركة الشباب وإشراكهم",
+    "key_2": "بناء القدرات",
+    "capacity": "بناء القدرات",
+    "socialDevelopment": "الدمج الاجتماعي والتنمية",
 
     //gallery_section
     "seeAll": "مشاهدة الجميع",
@@ -124,6 +130,5 @@ var locales_ar = {
     "message": "نص الرسالة*",
     "date": "تاريخ الميلاد*",
     "address": "العنوان*",
-
     "mSuccess": "تم إرسال رسالتك بنجاح",
 }

@@ -60,6 +60,9 @@
                             <a href="javascript:void(0)" @click="setLanguage('ar')"
                                 class="list-group-item-action w-100 ar-link">عربي</a>
                         </div>
+                        <a href="./careers-lists.html"
+                            class="list-group-item-action w-100 bg-blue text-uppercase">{{tr.careers}}
+                        </a>
                         <a href="./registration.html"
                             class="list-group-item-action w-100 bg-orange text-uppercase">{{tr.registration}}</a>
                         <a href="./contacts.html"
@@ -82,7 +85,7 @@
                         <li class="nav-item border-right">
                             <a class="nav-link py-0 px-4"
                                 :href="'./news-events-lists.html?activeList='+readQueryString('page-type')"
-                                v-if="readQueryString('page-type')!='library'"
+                                v-if="readQueryString('page-type')!='library' && readQueryString('page-type')!='projects' && readQueryString('page-type')!='careers'"
                                 :style="language=='ar' ? 'margin: -3px 0;font-weight: 600;' : ''">
                                 <i class="fas mr-2" :class="[language=='ar' ? 'fa-angle-right' : 'fa-angle-left']"
                                     :style="language=='ar' ? 'vertical-align: sub;' : ''"></i>{{tr.back}}
@@ -93,9 +96,14 @@
                                 <i class="fas mr-2"
                                     :class="[language=='ar' ? 'fa-angle-right' : 'fa-angle-left']"></i>{{tr.back}}
                             </a>
-                            <a class="nav-link py-0 px-4"
-                                :href="'./projects-lists.html?activeList='+readQueryString('page-type')"
+                            <a class="nav-link py-0 px-4" :href="'./projects-lists.html?activeList=youthEmpowerment'"
                                 v-if="readQueryString('page-type')=='projects'"
+                                :style="language=='ar' ? 'margin: -3px 0;font-weight: 600;' : ''">
+                                <i class="fas mr-2" :class="[language=='ar' ? 'fa-angle-right' : 'fa-angle-left']"
+                                    :style="language=='ar' ? 'vertical-align: sub;' : ''"></i>{{tr.back}}
+                            </a>
+                            <a class="nav-link py-0 px-4" :href="'./careers-lists.html?activeList=careers'"
+                                v-if="readQueryString('page-type')=='careers'"
                                 :style="language=='ar' ? 'margin: -3px 0;font-weight: 600;' : ''">
                                 <i class="fas mr-2" :class="[language=='ar' ? 'fa-angle-right' : 'fa-angle-left']"
                                     :style="language=='ar' ? 'vertical-align: sub;' : ''"></i>{{tr.back}}
@@ -112,12 +120,16 @@
                             <li class="nav-item border-right">
                                 <a class="nav-link py-0 px-4"
                                     :href="'./news-events-lists.html?activeList='+readQueryString('page-type')"
-                                    v-if="readQueryString('page-type')!='library'">
+                                    v-if="readQueryString('page-type')!='library' && readQueryString('page-type')!='projects' && readQueryString('page-type')!='careers'">
                                     <i class="fas mr-2"
                                         :class="[language=='ar' ? 'fa-angle-right' : 'fa-angle-left']"></i>
                                 </a>
                                 <a class="nav-link py-0 px-4" href="./library-list.html"
                                     v-if="readQueryString('page-type') == 'library'"><i class="fas mr-2"
+                                        :class="[language=='ar' ? 'fa-angle-right' : 'fa-angle-left']"></i>
+                                </a>
+                                <a class="nav-link py-0 px-4" :href="'./careers-lists.html?activeList=careers'"
+                                    v-if="readQueryString('page-type') == 'careers'"><i class="fas mr-2"
                                         :class="[language=='ar' ? 'fa-angle-right' : 'fa-angle-left']"></i>
                                 </a>
                             </li>
