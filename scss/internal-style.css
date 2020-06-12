@@ -1322,7 +1322,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .side-list .list-title {
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #d62b4d;
   position: relative;

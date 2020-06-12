@@ -428,7 +428,8 @@ section {
   right: 0;
   height: 100vh;
   background: #f2f2f2;
-  width: 17vw;
+  width: 18vw;
+  padding: 30px;
 }
 
 @media (max-width: 992px) {
@@ -454,7 +455,8 @@ section {
 }
 
 .home .side .social {
-  height: 25%;
+  height: 40%;
+  margin-top: auto;
 }
 
 .home .side .social a {

@@ -101,7 +101,7 @@
                     </div>
 
                 </div>
-                <div class="side position-absolute d-none d-lg-flex flex-column p-5">
+                <div class="side position-absolute d-none d-lg-flex flex-column">
                     <div class="text-left text-dark h-50">
                         <h4 class="regular text-uppercase m-0">our
                             <h4 class="bold text-uppercase m-0 mb-4">Works</h4>
@@ -180,7 +180,7 @@
                                             </div>
                                             <a :href="'news-detailed.html?news-id='+news[1].id+'&page-type=news'"
                                                 class="card-title text-red custom-title m-0 text-uppercase">
-                                                {{ news[1].title.slice(0, 90) }}</a>
+                                                {{ news[1].title.slice(0, 40) }}</a>
                                             <p class="card-text custom-paragraph m-0">
                                                 {{ news[1].text.slice(0, 65) + '...' }}</p>
                                             <a :href="'news-detailed.html?news-id='+news[1].id+'&page-type=news'"
@@ -234,7 +234,7 @@
                                                 <div class="news-tag text-white text-uppercase">{{tr.news}}</div>
                                             </div>
                                             <a :href="'news-detailed.html?news-id='+news[0].id+'&page-type=news'"
-                                                class="card-title text-red custom-title m-0 text-uppercase">{{ news[0].title.slice(0, 90) }}</a>
+                                                class="card-title text-red custom-title m-0 text-uppercase">{{ news[0].title.slice(0, 40) }}</a>
                                             <p class="card-text custom-paragraph m-0">
                                                 {{ news[0].text.slice(0, 65) + '...' }}</p>
                                             <a :href="'news-detailed.html?news-id='+news[0].id+'&page-type=news'"
@@ -256,7 +256,7 @@
                                             </div>
                                             <a :href="'news-detailed.html?news-id='+events[0].id+'&page-type=events'"
                                                 class="card-title text-red custom-title m-0 text-uppercase">
-                                                {{ events[0].title.slice(0, 90) }}</a>
+                                                {{ events[0].title.slice(0, 40) }}</a>
                                             <p class="card-text custom-paragraph m-0">
                                                 {{ events[0].text.slice(0, 65) + '...' }}</p>
                                             <a :href="'news-detailed.html?news-id='+events[0].id+'&page-type=events'"
@@ -292,7 +292,7 @@
                                     <div class="news-tag text-white text-uppercase">{{tr.news}}</div>
                                 </div>
                                 <a :href="'news-detailed.html?news-id='+news[0].id+'&page-type=news'"
-                                    class="card-title text-red custom-title m-0">{{ news[0].title }}</a>
+                                    class="card-title text-red custom-title m-0">{{ news[0].title.slice(0, 40) }}</a>
                                 <a :href="'news-detailed.html?news-id='+news[0].id+'&page-type=news'"
                                     class="btn btn-link p-0 text-left text-red font-weight-bold text-uppercase custom-more">{{tr.read_more}}
                                     <i class="fas ml-2"
