@@ -718,7 +718,7 @@ var home = new Vue({
                     });
             }
         },
-        postRegister(form) {
+        postRegisters(form) {
             if (this.validateForm(form)) {
                 var postBody = this.registerPage.organization;
                 axios.post(this.serverPath + 'en/api/company/registration/save', postBody)
