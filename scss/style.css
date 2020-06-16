@@ -31,7 +31,7 @@ a:not([href]) {
 .loading {
   width: 100vw;
   height: 100vh;
-  background: #f6f4e2;
+  background: #edeadf;
   z-index: 9999;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -78,12 +78,12 @@ a:not([href]) {
 }
 
 .sidebar .side-links a:hover {
-  background: #f6f4e2;
+  background: #edeadf;
 }
 
 .sidebar .side-links a.active {
   color: #fff;
-  background-color: #19a2e0;
+  background-color: #5a5b60;
 }
 
 .sidebar .side-links a:after {
@@ -94,6 +94,10 @@ a:not([href]) {
   font-weight: 900;
 }
 
+.sidebar .side-links a.cu-m {
+  margin: 1px 0;
+}
+
 .sidebar .side-links .languages-links a {
   color: #ee7531;
   -webkit-transition: all 0.3s ease-in-out;
@@ -101,7 +105,7 @@ a:not([href]) {
 }
 
 .sidebar .side-links .languages-links a:hover {
-  color: #19a2e0;
+  color: #d9232d;
   background: transparent !important;
 }
 
@@ -133,7 +137,7 @@ a:not([href]) {
 .side-menu {
   width: 60px;
   height: 60px;
-  background-color: #d62b4d;
+  background-color: #d9232d;
   z-index: 999;
   top: 0;
   left: 0;
@@ -144,7 +148,7 @@ a:not([href]) {
 }
 
 .side-menu:hover {
-  background-color: #ad213d;
+  background-color: #ad1c24;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -174,7 +178,7 @@ a:not([href]) {
 }
 
 .side-menu.opened {
-  background-color: #d62b4d;
+  background-color: #d9232d;
 }
 
 .side-menu.opened span:nth-child(1) {
@@ -235,52 +239,74 @@ ul {
 }
 
 .text-red {
-  color: #d62b4d !important;
+  color: #d9232d !important;
 }
 
 .text-red:hover {
-  color: #ad213d !important;
+  color: #ad1c24 !important;
 }
 
 .text-blue {
-  color: #19a2e0 !important;
+  color: #d9232d !important;
 }
 
 .text-blue:hover {
-  color: #1691c9 !important;
+  color: #c31f28 !important;
 }
 
-.bg-orange, .home .about_us {
+.bg-orange {
   color: #fff;
   background-color: #ee7531;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
-.bg-orange:hover, .home .about_us:hover {
+.bg-orange:hover {
   background-color: #da5a12;
 }
 
-.bg-red {
+.bg-red, .home .about_us {
   color: #fff;
-  background-color: #d62b4d;
+  background-color: #d9232d;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
-.bg-red:hover {
-  background-color: #ad213d;
+.bg-red:hover, .home .about_us:hover {
+  background-color: #ad1c24;
+}
+
+.bg-black {
+  color: #fff;
+  background-color: #5a5b60;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.bg-black:hover {
+  background-color: #414246;
+}
+
+.bg-silver {
+  color: #fff;
+  background-color: #c5c5c5;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.bg-silver:hover {
+  background-color: #acacac;
 }
 
 .bg-blue {
   color: #fff;
-  background-color: #19a2e0;
+  background-color: #d9232d;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .bg-blue:hover {
-  background-color: #1481b2;
+  background-color: #ad1c24;
 }
 
 section {
@@ -350,7 +376,7 @@ section {
 }
 
 .home {
-  padding: 8% 22% 8% 5%;
+  padding: 5% 60% 5% 0%;
 }
 
 @media (max-width: 576px) {
@@ -367,8 +393,8 @@ section {
 }
 
 .home .home_title {
-  font-size: 2.5rem;
-  width: 55%;
+  font-size: 2.25rem;
+  width: 90%;
 }
 
 @media (max-width: 576px) {
@@ -415,7 +441,7 @@ section {
     height: 170px;
   }
   .home .register {
-    background-color: #d62b4d;
+    background-color: #d9232d;
     padding: 14px 30px;
     font-size: 1.1rem;
     text-transform: uppercase;
@@ -517,7 +543,7 @@ section {
 }
 
 .news {
-  background-color: #f6f4e2;
+  background-color: #edeadf;
 }
 
 .news .all-news .custom-position,
@@ -534,7 +560,7 @@ section {
 }
 
 .news .custom-card .news-tag {
-  background-color: #d62b4d;
+  background-color: #d9232d;
   line-height: 28px;
   padding: 2px 10px;
   font-weight: 500;
@@ -745,14 +771,14 @@ section {
   font-weight: 500;
   padding: 18px 16px;
   color: #fff;
-  background-color: #19a2e0;
+  background-color: #d9232d;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   border: 0;
 }
 
 .about .head-content .section-link:hover {
-  color: #19a2e0;
+  color: #d9232d;
   background-color: #fff;
 }
 
@@ -796,7 +822,7 @@ section {
 }
 
 .about .body-content .custom-hover:hover .about-title {
-  color: #19a2e0;
+  color: #d9232d;
 }
 
 @media (max-width: 768px) {
@@ -842,7 +868,7 @@ section {
 }
 
 .projects .section-tag::before {
-  content: "OUR PROJECTS";
+  content: "OUR WORKS";
   text-transform: uppercase;
   color: #424242;
   background: #fff;
@@ -878,13 +904,13 @@ section {
   font-weight: 500;
   padding: 12px 16px;
   color: #fff;
-  background-color: #19a2e0;
+  background-color: #d9232d;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .projects .head-content .section-link:hover {
-  color: #19a2e0;
+  color: #d9232d;
   background-color: #fff;
 }
 
@@ -984,13 +1010,13 @@ section {
   font-weight: 500;
   padding: 12px 16px;
   color: #fff;
-  background-color: #19a2e0;
+  background-color: #d9232d;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .gallery .head-content .section-link:hover {
-  color: #19a2e0;
+  color: #d9232d;
   background-color: #fff;
 }
 
@@ -1180,13 +1206,13 @@ section {
   font-weight: 500;
   padding: 12px 16px;
   color: #fff;
-  background-color: #19a2e0;
+  background-color: #d9232d;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .library .head-content .section-link:hover {
-  color: #19a2e0;
+  color: #d9232d;
   background-color: #fff;
 }
 
@@ -1340,7 +1366,7 @@ section {
 }
 
 .footer #subscribe .sub .news-title {
-  color: #d62b4d;
+  color: #d9232d;
   font-weight: 700;
   font-size: 3rem;
 }
@@ -1414,7 +1440,7 @@ section {
 
 @media (max-width: 992px) {
   .footer .sub-footer {
-    height: 100vh;
+    height: auto;
   }
 }
 
@@ -1465,7 +1491,7 @@ section {
   }
   .footer .sub-footer > .row .col-12.col-md-8 {
     height: 80%;
-    margin-top: 3rem;
+    margin-top: 1rem;
   }
   .footer .sub-footer > .row .col-12.col-md-8 .row {
     height: 100%;

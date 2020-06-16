@@ -884,6 +884,12 @@ input[type="number"]::-webkit-outer-spin-button {
   position: relative;
 }
 
+@media (max-width: 1440px) {
+  .custom-navbar ul li {
+    font-size: 16px;
+  }
+}
+
 .custom-navbar ul li.active::before {
   content: "";
   position: absolute;

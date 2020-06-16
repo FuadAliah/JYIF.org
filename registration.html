@@ -1205,6 +1205,13 @@
                                                 <i class="fas fa-caret-down"></i>
                                             </div>
                                         </div>
+                                        <div class="form-row custom-row">
+                                            <div class="col-12 col-md-12 custom-input">
+                                                <input type="text" class="form-control form-control-lg" id="occupation"
+                                                    req="true" :placeholder="translate('occupation')"
+                                                    v-model="registerPage.individual.occupation">
+                                            </div>
+                                        </div>
                                         <div class="section-title mt-0 mt-md-4 mx-1 px-3 mx-md-0">
                                             <h5 class="text-uppercase m-0 text-dark">
                                                 <small>{{tr.profileInformation}}</small>
@@ -1236,61 +1243,9 @@
                                         </div>
                                         <div class="form-row custom-row">
                                             <div class="col-12 custom-input">
-                                                <textarea name="" rows="6" req="true id=" about_you"
+                                                <textarea name="" rows="6" req="true" id="about_you"
                                                     v-model="registerPage.individual.about_you"
                                                     :placeholder="translate('about_you')"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-row custom-row">
-                                            <div class="col-12 custom-input">
-                                                <textarea name="" rows="6" req="true" id="about_idea"
-                                                    v-model="registerPage.individual.about_project"
-                                                    :placeholder="translate('about_idea')"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-row custom-row">
-                                            <div class="col-12 custom-input">
-                                                <textarea name="" rows="6" req="true" id="yChoose"
-                                                    v-model="registerPage.individual.about_validity"
-                                                    :placeholder="translate('yChoose')"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-row custom-row">
-                                            <div class="col-12 col-md-6 custom-input">
-                                                <select class="custom-select" v-if="language=='en'"
-                                                    v-model="registerPage.individual.has_team">
-                                                    <option value="" disabled selected hidden>{{tr.haveTeam}}
-                                                    </option>
-                                                    <option value="Yes">{{tr.yes}}</option>
-                                                    <option value="No">{{tr.no}}</option>
-                                                </select>
-                                                <select class="custom-select" req="true" v-if="language=='ar'"
-                                                    v-model="registerPage.individual.has_team">
-                                                    <option value="" disabled selected hidden>{{tr.haveTeam}}
-                                                    </option>
-                                                    <option value="Yes">{{tr.yes}}</option>
-                                                    <option value="No">{{tr.no}}</option>
-                                                </select>
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-                                            <div class="col-12 col-md-6 custom-input">
-                                                <select class="custom-select" req="true" v-if="language=='en'"
-                                                    v-model="registerPage.individual.count_team_members">
-                                                    <option value="" disabled selected hidden>{{tr.teamMembers}}
-                                                    </option>
-                                                    <option value="5">1-5</option>
-                                                    <option value="10">5-10</option>
-                                                    <option value="10">10-&</option>
-                                                </select>
-                                                <select class="custom-select" req="true" v-if="language=='ar'"
-                                                    v-model="registerPage.individual.count_team_members">
-                                                    <option value="" disabled selected hidden>{{tr.teamMembers}}
-                                                    </option>
-                                                    <option value="5">5-1</option>
-                                                    <option value="10">10-5</option>
-                                                    <option value="10">أكثر من 10</option>
-                                                </select>
-                                                <i class="fas fa-caret-down"></i>
                                             </div>
                                         </div>
                                         <div class="form-row custom-row">
@@ -1302,7 +1257,6 @@
                                             </div>
                                         </div>
                                     </form>
-
                                 </div>
                             </div>
                         </div>
@@ -1860,30 +1814,9 @@
                                                     v-model="registerPage.organization.business_name">
                                             </div>
                                             <div class="col-12 col-md-6 custom-input">
-                                                <select class="custom-select" req="true" v-if="language=='en'"
-                                                    v-model="registerPage.organization.company_size">
-                                                    <option value="" disabled selected hidden>{{tr.company_size}}
-                                                    </option>
-                                                    <option value="5">1-5</option>
-                                                    <option value="10">5-10</option>
-                                                    <option value="10">10-&</option>
-                                                </select>
-                                                <select class="custom-select" req="true" v-if="language=='ar'"
-                                                    v-model="registerPage.organization.company_size">
-                                                    <option value="" disabled selected hidden>{{tr.company_size}}
-                                                    </option>
-                                                    <option value="5">5-1</option>
-                                                    <option value="10">10-5</option>
-                                                    <option value="10">أكثر من 10</option>
-                                                </select>
-                                                <i class="fas fa-caret-down"></i>
-                                            </div>
-                                        </div>
-                                        <div class="form-row custom-row">
-                                            <div class="col-12 custom-input">
-                                                <textarea name="" rows="6" req="true"
-                                                    v-model="registerPage.organization.address"
-                                                    :placeholder="translate('address')"></textarea>
+                                                <input type="text" class="form-control form-control-lg" req="true"
+                                                    :placeholder="translate('website')"
+                                                    v-model="registerPage.organization.website">
                                             </div>
                                         </div>
                                         <div class="form-row custom-row">

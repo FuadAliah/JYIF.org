@@ -2,13 +2,13 @@ var locales_en = {
     "home": "home",
     "news_events": "News / Events",
     "about": "About us",
-    "projects": "Our Projects",
+    "projects": "Our Works",
     "gallery": "Our Gallery",
     "partners": "Our Partners",
     "library": "Our Library",
 
     //home_section
-    "registration": "Registration",
+    "registration": "Join Us",
     "Contact_us": "Contact us",
     "about_street": "THE Jordan youth innovation fourm",
     "about_us": "More About us",
@@ -55,8 +55,8 @@ var locales_en = {
     "subSuccess": "Thank You for Subscribing!",
 
     //footer_section
-    "aboutIncubator": "About The Incubator",
-    "aboutGame": "About Game Jordan",
+    "Timeline": "Timeline",
+    "ourTeam": "Our Team",
     "aboutJyif": "About jyif",
     "socialMedia": "Social Media",
     "powered": "Powered by ",
@@ -75,12 +75,9 @@ var locales_en = {
 
     //about_pages
     "aboutTag": "about us",
-    "about_jyif": "About jyif",
-    "about_the_incubator": "About The Incubator",
-    "about_game_jordan": "About Game Jordan",
 
     //register_page
-    "register": "register",
+    "register": "Join Us",
     "registerTitle": "Please complete the form below",
     "mandatory": "Mandatory Fields*",
     "accountInformation": "Account Information",
@@ -100,12 +97,13 @@ var locales_en = {
     "about_idea": "Tell us about your Idea / Project*",
     "teamMembers": "Number of Team members*",
     "regSuccess": "Registration completed successfully!",
-    "individual": "individual",
-    "organization": "organization",
+    "individual": "individuals",
+    "organization": "organizations",
     "business_owner_name": "Business Owner Name*",
     "business_name": "Business Name*",
     "about_business": "About Business*",
-    "company_size": "Company Size*",
+    "website": "Website*",
+    "occupation": "Occupation*",
 
     //contacts_page
     "call": "Call",

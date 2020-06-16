@@ -57,8 +57,8 @@ var locales_ar = {
     "subSuccess": "شكراً لاشتراكك معنا!",
 
     //footer_section
-    "aboutIncubator": "حاضنة أعمال رياضات الشوارع",
-    "aboutGame": "جييم الأردن",
+    "Timeline": "الجدول الزمني",
+    "ourTeam": "فريق العمل",
     "aboutJyif": "الملتقى الاردني للابداع الشبابي",
     "socialMedia": "التواصل الإجتماعي",
     "powered": "تصميم وبرمجة ",
@@ -78,8 +78,6 @@ var locales_ar = {
     //about_page
     "aboutTag": "من نحن",
     "about_jyif": "الملتقى الاردني للابداع الشبابي",
-    "about_the_incubator": "حاضنة أعمال رياضات الشوارع",
-    "about_game_jordan": "جييم الأردن",
 
     //register
     "register": "سجل فكرتك الآن",
@@ -107,7 +105,8 @@ var locales_ar = {
     "business_owner_name": "إسم صاحب المنظمة*",
     "business_name": "إسم المنظمة*",
     "about_business": "عن المنظمة*",
-    "company_size": "عدد أعضاء فريق العمل*",
+    "website": "الموقع الإلكتروني*",
+    "occupation": "المهنة*",
 
     //contacts_page
     "call": "إتصل بنا",

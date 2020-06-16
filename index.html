@@ -60,13 +60,13 @@
                                 class="list-group-item-action w-100 ar-link">عربي</a>
                         </div>
                         <a href="./careers-lists.html"
-                            class="list-group-item-action w-100 bg-blue text-uppercase">{{tr.careers}}
+                            class="list-group-item-action w-100 bg-silver text-uppercase cu-m">{{tr.careers}}
                         </a>
                         <a href="./registration.html"
-                            class="list-group-item-action w-100 bg-orange text-uppercase">{{tr.registration}}
+                            class="list-group-item-action w-100 bg-black text-uppercase cu-m">{{tr.registration}}
                         </a>
                         <a href="./contacts.html"
-                            class="list-group-item-action w-100 bg-red text-uppercase">{{tr.Contact_us}}
+                            class="list-group-item-action w-100 bg-red text-uppercase cu-m">{{tr.Contact_us}}
                         </a>
                     </div>
                 </div>
@@ -82,7 +82,8 @@
         <div class="data" :class="[open == true ? 'dragged' : '' ]">
             <div class="trigger position-absolute" v-if="open == true" @click="open = !open"></div>
             <section id="home" data-hash="home" class="section home text-center position-relative" v-if="home"
-                style="background-size: cover;" :style="{ backgroundImage: 'url('+serverPath+home.background+')'}">
+                style="background-size: cover;"
+                :style="{ backgroundImage: 'linear-gradient( rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.75) 100%), url('+serverPath+home.background+')'}">
                 <div class="d-flex flex-column justify-content-around h-100 custom-mobile-height">
                     <div class="logo-white">
                         <img :src="serverPath+home.logo" alt="">
@@ -612,22 +613,79 @@
                     <div class="row px-4 pt-5 p-md-5">
                         <div class="col-12 col-md-4 mt-4 mt-md-0">
                             <div class="footer-logo">
-                                <img src="./imgs/footer-logo.png" alt="" height="140">
+                                <img src="./imgs/JYIF-logo-dark.svg" alt="" height="75">
+                            </div>
+                            <div class="Social-links mt-4">
+                                <h5 class="text-uppercase">{{tr.socialMedia}}</h5 class="text-uppercase">
+                                <ul class="p-0 m-0 mt-3 d-flex">
+                                    <li class="border-right-0 border border-info">
+                                        <a :href="footer.contact_info.social_links.fb_link" target="_blank"
+                                            class="facebook text-dark">
+                                            <i class="fab fa-facebook-f fa-lg"></i></a>
+                                    </li>
+                                    <li class="border-right-0 border border-info">
+                                        <a :href="footer.contact_info.social_links.tw_link" target="_blank"
+                                            class="twitter text-dark">
+                                            <i class="fab fa-twitter fa-lg"></i>
+                                        </a>
+                                    </li>
+                                    <li class="border-right-0 border border-info">
+                                        <a :href="footer.contact_info.social_links.yt_link" target="_blank"
+                                            class="youtube text-dark">
+                                            <i class="fab fa-youtube fa-lg"></i>
+                                        </a>
+                                    </li>
+                                    <li class="border-right-0 border border-info">
+                                        <a :href="footer.contact_info.social_links.in_link" target="_blank"
+                                            class="linkedin text-dark">
+                                            <i class="fab fa-linkedin fa-lg"></i>
+                                        </a>
+                                    </li>
+                                    <li class="border border-info">
+                                        <a :href="footer.contact_info.social_links.ig_link" target="_blank"
+                                            class="instagram text-dark">
+                                            <i class="fab fa-instagram fa-lg"></i>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                         <div class="col-12 col-md-8">
                             <div class="row">
-                                <div class="col-12 col-md-4 mt-0">
+                                <div class="col-12 col-md-4 mt-4 mt-md-0">
+                                    <div class="works-links">
+                                        <h5 class="text-uppercase">{{tr.projects}}</h5>
+                                        <ul class="p-0 m-0 mt-3">
+                                            <li class="py-1">
+                                                <a href="./projects-lists.html?activeList=youthEmpowerment"
+                                                    class="text-secondary text-uppercase ">{{tr.key_0 }}</a>
+                                                </li">
+                                            <li class="py-1">
+                                                <a href="./projects-lists.html?activeList=youthParticipation"
+                                                    class="text-secondary text-uppercase ">{{tr.key_1}}</a>
+                                            </li>
+                                            <li class="py-1">
+                                                <a href="./projects-lists.html?activeList=capacity"
+                                                    class="text-secondary text-uppercase ">{{tr.key_2}}</a>
+                                            </li>
+                                            <li class="py-1">
+                                                <a href="./projects-lists.html?activeList=socialDevelopment"
+                                                    class="text-secondary text-uppercase ">{{tr.key_3}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4 mt-4 mt-md-0  ">
                                     <div class="abouts-links">
                                         <h5 class="text-uppercase">{{tr.about}}</h5>
                                         <ul class="p-0 m-0 mt-3">
                                             <li class="py-1">
                                                 <a href="./about-detailed.html?activeList=about_the_incubator"
-                                                    class="text-secondary text-uppercase ">{{tr.aboutIncubator }}</a>
+                                                    class="text-secondary text-uppercase ">{{tr.Timeline }}</a>
                                                 </li">
                                             <li class="py-1">
                                                 <a href="./about-detailed.html?activeList=about_game_jordan"
-                                                    class="text-secondary text-uppercase ">{{tr.aboutGame}}</a>
+                                                    class="text-secondary text-uppercase ">{{tr.ourTeam}}</a>
                                             </li>
                                             <li class="py-1">
                                                 <a href="./about-detailed.html?activeList=about_jyif"
@@ -636,7 +694,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-4 mt-4 mt-md-0">
+                                <div class="col-12 col-md-4 my-4 my-md-0">
                                     <div class="contacts-links">
                                         <h5 class="text-uppercase">{{tr.Contact_us}}</h5>
                                         <ul class="p-0 m-0 mt-3">
@@ -661,42 +719,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-4 mt-4 mt-md-0">
-                                    <div class="Social-links">
-                                        <h5 class="text-uppercase">{{tr.socialMedia}}</h5 class="text-uppercase">
-                                        <ul class="p-0 m-0 mt-3 d-flex">
-                                            <li class="border-right-0 border border-info">
-                                                <a :href="footer.contact_info.social_links.fb_link" target="_blank"
-                                                    class="facebook text-dark">
-                                                    <i class="fab fa-facebook-f fa-lg"></i></a>
-                                            </li>
-                                            <li class="border-right-0 border border-info">
-                                                <a :href="footer.contact_info.social_links.tw_link" target="_blank"
-                                                    class="twitter text-dark">
-                                                    <i class="fab fa-twitter fa-lg"></i>
-                                                </a>
-                                            </li>
-                                            <li class="border-right-0 border border-info">
-                                                <a :href="footer.contact_info.social_links.yt_link" target="_blank"
-                                                    class="youtube text-dark">
-                                                    <i class="fab fa-youtube fa-lg"></i>
-                                                </a>
-                                            </li>
-                                            <li class="border-right-0 border border-info">
-                                                <a :href="footer.contact_info.social_links.in_link" target="_blank"
-                                                    class="linkedin text-dark">
-                                                    <i class="fab fa-linkedin fa-lg"></i>
-                                                </a>
-                                            </li>
-                                            <li class="border border-info">
-                                                <a :href="footer.contact_info.social_links.ig_link" target="_blank"
-                                                    class="instagram text-dark">
-                                                    <i class="fab fa-instagram fa-lg"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>

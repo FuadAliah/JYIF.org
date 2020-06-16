@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Almarai:500, 700, 800&display=swap&subset=arabic");
-$redColor: #d62b4d;
-$blueColor: #19a2e0;
+$redColor: #d9232d;
+$blueColor: #d9232d;
 $orangeColor: #ee7531;
-$newsColor: #f6f4e2;
+$lightColor: #c5c5c5;
+$darkColor: #5a5b60;
+$newsColor: #edeadf;
 $footerBackground: #ebe8d9;
 $cubic-bezier: all 0.3s cubic-bezier(0.25, 0.1, 0.28, 1.54);
 $ease-in-out: all 0.3s ease-in-out;
@@ -75,7 +77,7 @@ a:not([href]) {
       }
       &.active {
         color: #fff;
-        background-color: $blueColor;
+        background-color: $darkColor;
       }
       &:after {
         content: "\f054";
@@ -83,6 +85,9 @@ a:not([href]) {
         right: 1.25rem;
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
+      }
+      &.cu-m {
+        margin: 1px 0;
       }
     }
     .languages-links {
@@ -221,6 +226,22 @@ ul {
     background-color: darken($redColor, 10%);
   }
 }
+.bg-black {
+  color: #fff;
+  background-color: $darkColor;
+  transition: $ease-in-out;
+  &:hover {
+    background-color: darken($darkColor, 10%);
+  }
+}
+.bg-silver {
+  color: #fff;
+  background-color: $lightColor;
+  transition: $ease-in-out;
+  &:hover {
+    background-color: darken($lightColor, 10%);
+  }
+}
 .bg-blue {
   color: #fff;
   background-color: $blueColor;
@@ -274,7 +295,7 @@ section {
 }
 
 .home {
-  padding: 8% 22% 8% 5%;
+  padding: 5% 60% 5% 0%;
   @media (max-width: 576px) {
     padding: 20% 6% 20% 6%;
 
@@ -286,8 +307,8 @@ section {
     height: 280px;
   }
   .home_title {
-    font-size: 2.5rem;
-    width: 55%;
+    font-size: 2.25rem;
+    width: 90%;
     @media (max-width: 576px) {
       font-size: 2rem;
       width: 80%;
@@ -315,7 +336,7 @@ section {
   }
 
   .about_us {
-    @extend .bg-orange;
+    @extend .bg-red;
     width: fit-content;
     font-size: 20px;
   }
@@ -704,7 +725,7 @@ section {
 
 .projects {
   .section-tag::before {
-    content: "OUR PROJECTS";
+    content: "OUR WORKS";
     text-transform: uppercase;
     color: #424242;
     background: #fff;
@@ -1207,7 +1228,7 @@ section {
     justify-content: space-between;
     background: $footerBackground;
     @media (max-width: 992px) {
-      height: 100vh;
+      height: auto;
     }
     .Social-links {
       ul {
@@ -1259,7 +1280,7 @@ section {
         height: 75%;
         .col-12.col-md-8 {
           height: 80%;
-          margin-top: 3rem;
+          margin-top: 1rem;
           .row {
             height: 100%;
           }

@@ -1,5 +1,5 @@
-$redColor: #d62b4d;
-$blueColor: #19a2e0;
+$redColor: #cf212a;
+$blueColor: #cf212a;
 $orangeColor: #ee7531;
 $newsColor: #f6f4e2;
 $footerBackground: #ebe8d9;
@@ -273,7 +273,7 @@ section {
 }
 
 .home {
-  padding: 8% 8% 5% 22%;
+  padding: 5% 5% 5% 60%;
   @media (max-width: 576px) {
     padding: 20% 6% 20% 6%;
     .custom-mobile-height {
@@ -284,8 +284,8 @@ section {
     height: 280px;
   }
   .home_title {
-    font-size: 2.5rem;
-    width: 55%;
+    font-size: 2.25rem;
+    width: 90%;
     @media (max-width: 576px) {
       font-size: 2rem;
       width: 80%;
